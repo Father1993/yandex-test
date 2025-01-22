@@ -5,156 +5,284 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
             name="description"
-            content="Yandex Лавка - Интерактивный баннер"
+            content="Yandex Лавка - Быстрая доставка продуктов на дом. Свежие продукты, фрукты, овощи, мясо и молочные продукты с доставкой за 15 минут."
         />
+        <meta
+            name="keywords"
+            content="Яндекс Лавка, доставка продуктов, продукты на дом, быстрая доставка, свежие продукты"
+        />
+        <meta name="author" content="Yandex" />
+        <meta name="robots" content="index, follow" />
+        <meta
+            property="og:title"
+            content="Yandex Лавка - Быстрая доставка продуктов"
+        />
+        <meta
+            property="og:description"
+            content="Доставка свежих продуктов за 15 минут"
+        />
+        <meta property="og:image" content="src/img/main-bar-bg.png" />
+        <meta property="og:type" content="website" />
         <meta name="theme-color" content="#ff3b30" />
-        <title>Yandex Лавка</title>
+        <title>
+            Yandex Лавка | Быстрая доставка продуктов на дом за 15 минут
+        </title>
+        <link rel="canonical" href="https://lavka.yandex.ru" />
+        <link rel="icon" type="image/x-icon" href="src/img/icons/favicon.ico" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="src/img/icons/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="src/img/icons/favicon-16x16.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            href="src/img/icons/apple-touch-icon.png"
+        />
+        <link rel="manifest" href="src/img/icons/site.webmanifest" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="src/img/icons/android-chrome-192x192.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="512x512"
+            href="src/img/icons/android-chrome-512x512.png"
+        />
         <link rel="preload" href="src/img/main-bar-bg.png" as="image" />
         <link rel="stylesheet" href="src/styles/normalize.css" />
         <link rel="stylesheet" href="src/styles/globalStyles.css" />
     </head>
     <body>
-        <div class="banner">
-            <div class="banner__shelf shelf">
-                <div class="shelf__row shelf__row_position_top">
+        <h1 class="visually-hidden">
+            Яндекс Лавка - Доставка продуктов на дом за 15 минут
+        </h1>
+        <div
+            class="banner"
+            role="region"
+            aria-label="Интерактивный баннер Яндекс Лавки"
+        >
+            <div class="banner__shelf shelf" role="list">
+                <div class="shelf__row shelf__row_position_top" role="listitem">
                     <div
                         class="shelf__product product"
                         draggable="true"
                         data-product="vine"
+                        role="button"
+                        aria-label="Добавить вино в корзину"
                     >
                         <img
                             class="product__image"
                             src="src/img/products/vine.png"
                             alt="Вино"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
                     <div
                         class="shelf__product product"
                         draggable="true"
                         data-product="milk"
+                        role="button"
+                        aria-label="Добавить молоко в корзину"
                     >
                         <img
                             class="product__image"
                             src="src/img/products/milk.png"
                             alt="Молоко"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
                     <div
                         class="shelf__product product"
                         draggable="true"
                         data-product="jam"
+                        role="button"
+                        aria-label="Добавить варенье в корзину"
                     >
                         <img
                             class="product__image"
                             src="src/img/products/jam.png"
                             alt="Варенье"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
                     <div
                         class="shelf__product product"
                         draggable="true"
                         data-product="cheese"
+                        role="button"
+                        aria-label="Добавить сыр в корзину"
                     >
                         <img
                             class="product__image"
                             src="src/img/products/cheese.png"
                             alt="Сыр"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
                 </div>
 
-                <div class="shelf__row shelf__row_position_middle">
+                <div
+                    class="shelf__row shelf__row_position_middle"
+                    role="listitem"
+                >
                     <div
                         class="shelf__product product"
                         draggable="true"
                         data-product="beaf"
+                        role="button"
+                        aria-label="Добавить говядину в корзину"
                     >
                         <img
                             class="product__image"
                             src="src/img/products/beaf.png"
                             alt="Говядина"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
                     <div
                         class="shelf__product product product_type_special"
                         draggable="true"
                         data-product="meat"
+                        role="button"
+                        aria-label="Добавить мясо в корзину"
                     >
                         <img
                             class="product__image"
                             src="src/img/products/meat.png"
                             alt="Мясо"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
                     <div
                         class="shelf__product product"
                         draggable="true"
                         data-product="sugar"
+                        role="button"
+                        aria-label="Добавить сахар в корзину"
                     >
                         <img
                             class="product__image"
                             src="src/img/products/sugar.png"
                             alt="Сахар"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
                 </div>
 
-                <div class="shelf__row shelf__row_position_bottom">
+                <div
+                    class="shelf__row shelf__row_position_bottom"
+                    role="listitem"
+                >
                     <div
                         class="shelf__product product"
                         draggable="true"
                         data-product="pineapple"
+                        role="button"
+                        aria-label="Добавить ананас в корзину"
                     >
                         <img
                             class="product__image"
                             src="src/img/products/pineapple.png"
                             alt="Ананас"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
                     <div
                         class="shelf__product product"
                         draggable="true"
                         data-product="banana"
+                        role="button"
+                        aria-label="Добавить банан в корзину"
                     >
                         <img
                             class="product__image"
                             src="src/img/products/banana.png"
                             alt="Банан"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
                     <div
                         class="shelf__product product"
                         draggable="true"
                         data-product="apple"
+                        role="button"
+                        aria-label="Добавить яблоко в корзину"
                     >
                         <img
                             class="product__image"
                             src="src/img/products/apple.png"
                             alt="Яблоко"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
                     <div
                         class="shelf__product product"
                         draggable="true"
                         data-product="cabbage"
+                        role="button"
+                        aria-label="Добавить капусту в корзину"
                     >
                         <img
                             class="product__image"
                             src="src/img/products/Cabbage.png"
                             alt="Капуста"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </div>
                 </div>
             </div>
 
-            <div class="banner__basket basket">
+            <div
+                class="banner__basket basket"
+                role="region"
+                aria-label="Корзина"
+            >
                 <img
                     src="src/img/basket.png"
                     alt="Корзина"
                     class="basket__image"
+                    loading="lazy"
+                    decoding="async"
                 />
             </div>
         </div>
+
+        <!-- Микроразметка Schema.org -->
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "Organization",
+                "name": "Yandex Лавка",
+                "description": "Сервис быстрой доставки продуктов",
+                "url": "https://lavka.yandex.ru",
+                "logo": "src/img/main-bar-bg.png",
+                "offers": {
+                    "@type": "AggregateOffer",
+                    "availability": "https://schema.org/InStock"
+                }
+            }
+        </script>
         <script defer src="src/js/script.js"></script>
     </body>
 </html>
