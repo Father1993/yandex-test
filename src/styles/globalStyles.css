@@ -1,14 +1,8 @@
-/* Базовые стили */
 :root {
     --banner-width: 300px;
     --banner-height: 600px;
-    --primary-color: #ff3b30;
-    --secondary-color: #ffffff;
-    --shelf-color: #2c3135;
-    --cart-bg-color: #ff7a3d;
-    --awning-color-1: #ffb800;
-    --awning-color-2: #ff8a00;
-    --transition-duration: 0.3s;
+    --product-gap: 5px;
+    --shelf-margin: 27px;
 }
 
 /* Общие стили */
@@ -26,6 +20,7 @@ body {
     background-color: #f5f5f5;
 }
 
+/* Блок banner */
 .banner {
     width: 300px;
     height: 600px;
@@ -35,6 +30,7 @@ body {
     background-color: #fff;
 }
 
+/* Блок shelf */
 .shelf {
     width: 211px;
     height: 431px;
@@ -48,8 +44,18 @@ body {
     background-position: center;
 }
 
-/* Стили для корзины */
-.basket-zone {
+/* Элементы shelf */
+.shelf__row {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: var(--product-gap);
+    align-items: flex-end;
+    margin-bottom: var(--shelf-margin);
+}
+
+/* Блок basket */
+.basket {
     position: absolute;
     bottom: -20px;
     left: 50%;
@@ -59,165 +65,143 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    pointer-events: all;
 }
 
-.basket {
+.basket__image {
     width: 276px;
     height: 325px;
     object-fit: contain;
+    z-index: 2;
 }
 
-/* Стили для продуктов */
+/* Блок product */
 .product {
-    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: grab;
-    user-select: none;
-    transition: transform 0.2s ease;
-    width: 40px; /* Базовый размер для продуктов */
+    will-change: transform;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: center bottom;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.product:active {
+.product_type_special {
+    transform: translateY(10px);
+}
+
+.product__image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Модификаторы состояний */
+.product:hover {
+    transform: translateY(-15px) scale(1.08) rotate(1deg);
+}
+
+.product:nth-child(2n):hover {
+    transform: translateY(-15px) scale(1.08) rotate(-1deg);
+}
+
+.product:hover .product__image {
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.2));
+}
+
+.product:active,
+.product:focus {
+    cursor: grabbing !important;
+    transform: translateY(-10px) scale(0.95) !important;
+    transition: all 0.1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.product:hover:active,
+.product:nth-child(2n):hover:active {
+    transform: translateY(-10px) scale(0.95) !important;
+    transition-duration: 0.1s;
+}
+
+.product:active .product__image,
+.product:focus .product__image {
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+    transition-duration: 0.1s;
+}
+
+.product_state_dragging {
+    opacity: 0.5;
     cursor: grabbing;
 }
 
-.product img {
-    width: 100%;
-    height: auto;
-    pointer-events: none;
-}
-
-/* Позиционирование продуктов на полке */
-[data-product='apple'] {
-    top: 20%;
-    left: 10%;
-}
-
-[data-product='banana'] {
-    top: 20%;
-    left: 40%;
-}
-
-[data-product='cabbage'] {
-    top: 30%;
-    left: 25%;
-}
-
-[data-product='pineapple'] {
-    top: 30%;
-    left: 55%;
-}
-
-[data-product='sugar'] {
-    top: 40%;
-    left: 15%;
-}
-
-[data-product='meat'] {
-    top: 40%;
-    left: 45%;
-}
-
-[data-product='beaf'] {
-    top: 50%;
-    left: 30%;
-}
-
-[data-product='cheese'] {
-    top: 50%;
-    left: 60%;
-}
-
-[data-product='jam'] {
-    top: 60%;
-    left: 20%;
-}
-
-[data-product='milk'] {
-    top: 60%;
-    left: 50%;
-}
-
-/* Стили для перетаскивания */
-.product.dragging {
-    opacity: 0.8;
-    transform: scale(1.05);
-    z-index: 1000;
-}
-
-/* Стили для кнопки оплаты */
-.pay-button {
+/* Блок basket-items */
+.basket-items {
     position: absolute;
-    bottom: 20px;
+    bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 12px 24px;
-    background-color: #ffdc38;
-    color: #000;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 16px;
-    display: none;
-    z-index: 1001;
-    animation: buttonPulse 1.5s infinite;
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    z-index: 1;
 }
 
-@keyframes buttonPulse {
+.basket-item {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: dropIn 0.3s ease-out;
+}
+
+.basket-item__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Блок pay-button */
+.pay-button {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.pay-button:hover {
+    background-color: #ff2d20 !important;
+    transform: translateX(-50%) scale(1.05) !important;
+}
+
+@keyframes dropIn {
     0% {
-        transform: translateX(-50%) scale(1);
-    }
-    50% {
-        transform: translateX(-50%) scale(1.05);
+        transform: translateY(-50px);
+        opacity: 0;
     }
     100% {
-        transform: translateX(-50%) scale(1);
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
-/* Адаптивность */
-@media (max-width: 768px) {
-    .banner {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .shelf {
-        width: 180px;
-        height: 367px;
-    }
-
-    .basket-zone {
-        width: 235px;
-        height: 276px;
-    }
-
-    .basket {
-        width: 235px;
-        height: 276px;
-    }
-
-    .product {
-        width: 34px;
-    }
-}
-
-@media (max-width: 480px) {
-    .shelf {
-        width: 160px;
-        height: 326px;
-    }
-
-    .basket-zone {
-        width: 200px;
-        height: 235px;
-    }
-
-    .basket {
-        width: 200px;
-        height: 235px;
-    }
-
-    .product {
-        width: 30px;
+/* Оптимизация для пользователей с ограниченным движением */
+@media (prefers-reduced-motion: reduce) {
+    .product,
+    .product:hover,
+    .product:hover .product__image {
+        transition: none;
+        transform: none;
+        filter: none;
     }
 }
