@@ -7,53 +7,154 @@
             name="description"
             content="Yandex Лавка - Интерактивный баннер"
         />
+        <meta name="theme-color" content="#ff3b30" />
         <title>Yandex Лавка</title>
+        <link rel="preload" href="src/img/main-bar-bg.png" as="image" />
         <link rel="stylesheet" href="src/styles/normalize.css" />
         <link rel="stylesheet" href="src/styles/globalStyles.css" />
     </head>
     <body>
         <div class="banner">
-            <div class="shelf">
-                <!-- Продукты на полке -->
-                <div class="product" draggable="true" data-product="vine">
-                    <img src="src/img/products/vine.png" alt="Вино" />
+            <div class="banner__shelf shelf">
+                <div class="shelf__row shelf__row_position_top">
+                    <div
+                        class="shelf__product product"
+                        draggable="true"
+                        data-product="vine"
+                    >
+                        <img
+                            class="product__image"
+                            src="src/img/products/vine.png"
+                            alt="Вино"
+                        />
+                    </div>
+                    <div
+                        class="shelf__product product"
+                        draggable="true"
+                        data-product="milk"
+                    >
+                        <img
+                            class="product__image"
+                            src="src/img/products/milk.png"
+                            alt="Молоко"
+                        />
+                    </div>
+                    <div
+                        class="shelf__product product"
+                        draggable="true"
+                        data-product="jam"
+                    >
+                        <img
+                            class="product__image"
+                            src="src/img/products/jam.png"
+                            alt="Варенье"
+                        />
+                    </div>
+                    <div
+                        class="shelf__product product"
+                        draggable="true"
+                        data-product="cheese"
+                    >
+                        <img
+                            class="product__image"
+                            src="src/img/products/cheese.png"
+                            alt="Сыр"
+                        />
+                    </div>
                 </div>
-                <div class="product" draggable="true" data-product="apple">
-                    <img src="src/img/products/apple.png" alt="Яблоко" />
+
+                <div class="shelf__row shelf__row_position_middle">
+                    <div
+                        class="shelf__product product"
+                        draggable="true"
+                        data-product="beaf"
+                    >
+                        <img
+                            class="product__image"
+                            src="src/img/products/beaf.png"
+                            alt="Говядина"
+                        />
+                    </div>
+                    <div
+                        class="shelf__product product product_type_special"
+                        draggable="true"
+                        data-product="meat"
+                    >
+                        <img
+                            class="product__image"
+                            src="src/img/products/meat.png"
+                            alt="Мясо"
+                        />
+                    </div>
+                    <div
+                        class="shelf__product product"
+                        draggable="true"
+                        data-product="sugar"
+                    >
+                        <img
+                            class="product__image"
+                            src="src/img/products/sugar.png"
+                            alt="Сахар"
+                        />
+                    </div>
                 </div>
-                <div class="product" draggable="true" data-product="banana">
-                    <img src="src/img/products/banana.png" alt="Банан" />
-                </div>
-                <div class="product" draggable="true" data-product="cabbage">
-                    <img src="src/img/products/Cabbage.png" alt="Капуста" />
-                </div>
-                <div class="product" draggable="true" data-product="pineapple">
-                    <img src="src/img/products/pineapple.png" alt="Ананас" />
-                </div>
-                <div class="product" draggable="true" data-product="sugar">
-                    <img src="src/img/products/sugar.png" alt="Сахар" />
-                </div>
-                <div class="product" draggable="true" data-product="meat">
-                    <img src="src/img/products/meat.png" alt="Мясо" />
-                </div>
-                <div class="product" draggable="true" data-product="beaf">
-                    <img src="src/img/products/beaf.png" alt="Говядина" />
-                </div>
-                <div class="product" draggable="true" data-product="cheese">
-                    <img src="src/img/products/cheese.png" alt="Сыр" />
-                </div>
-                <div class="product" draggable="true" data-product="jam">
-                    <img src="src/img/products/jam.png" alt="Варенье" />
-                </div>
-                <div class="product" draggable="true" data-product="milk">
-                    <img src="src/img/products/milk.png" alt="Молоко" />
+
+                <div class="shelf__row shelf__row_position_bottom">
+                    <div
+                        class="shelf__product product"
+                        draggable="true"
+                        data-product="pineapple"
+                    >
+                        <img
+                            class="product__image"
+                            src="src/img/products/pineapple.png"
+                            alt="Ананас"
+                        />
+                    </div>
+                    <div
+                        class="shelf__product product"
+                        draggable="true"
+                        data-product="banana"
+                    >
+                        <img
+                            class="product__image"
+                            src="src/img/products/banana.png"
+                            alt="Банан"
+                        />
+                    </div>
+                    <div
+                        class="shelf__product product"
+                        draggable="true"
+                        data-product="apple"
+                    >
+                        <img
+                            class="product__image"
+                            src="src/img/products/apple.png"
+                            alt="Яблоко"
+                        />
+                    </div>
+                    <div
+                        class="shelf__product product"
+                        draggable="true"
+                        data-product="cabbage"
+                    >
+                        <img
+                            class="product__image"
+                            src="src/img/products/Cabbage.png"
+                            alt="Капуста"
+                        />
+                    </div>
                 </div>
             </div>
 
-            <div class="basket-zone">
-                <img src="src/img/basket.png" alt="Корзина" class="basket" />
+            <div class="banner__basket basket">
+                <img
+                    src="src/img/basket.png"
+                    alt="Корзина"
+                    class="basket__image"
+                />
             </div>
         </div>
-        <script src="src/js/script.js"></script>
+        <script defer src="src/js/script.js"></script>
     </body>
 </html>
